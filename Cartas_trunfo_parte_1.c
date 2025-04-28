@@ -11,6 +11,8 @@ struct Carta {
     int NumPontosTuristicos;
 };
 
+struct Carta Baralho[2];
+
 void LimparDados(char * str){
     size_t len = strlen(str);
     if (len > 0 && str[len-1] == '\n') {
@@ -19,35 +21,37 @@ void LimparDados(char * str){
 }
 
 void LerDados(struct Carta * carta){
-    printf("Carta 1:\n");
+    for (int i=0; i < 2; i++){
+        printf("Carta %d\n", i+1);
 
-    printf("Estado: ");
-    fgets(carta->Estado,sizeof(carta->Estado), stdin);
-    LimparDados(carta->Estado);
+        printf("Estado: ");
+        fgets(Baralho[i].Estado,sizeof(Baralho[i].Estado), stdin);
+        LimparDados(Baralho[i].Estado);
 
-    printf("Codigo: ");
-    fgets(carta->Codigo, sizeof(carta->Codigo), stdin);
-    LimparDados(carta->Codigo);
+        printf("Codigo: ");
+        fgets(Baralho[i].Codigo, sizeof(Baralho[i].Codigo), stdin);
+        LimparDados(Baralho[i].Codigo);
 
-    printf("Nome da cidade: ");
-    fgets(carta->NomeCidade, sizeof(carta->NomeCidade), stdin);
-    LimparDados(carta->NomeCidade); 
+        printf("Nome da cidade: ");
+        fgets(Baralho[i].NomeCidade, sizeof(Baralho[i].NomeCidade), stdin);
+        LimparDados(Baralho[i].NomeCidade); 
     
-    printf("Populacao:");
-    scanf("%d", &carta->Populacao);
-    getchar();
+        printf("Populacao:");
+        scanf("%d", & Baralho[i].Populacao);
+        getchar();
 
-    printf("Area: ");
-    scanf("%f", &carta->Area);
-    getchar();
+        printf("Area: ");
+        scanf("%f", & Baralho[i].Area);
+        getchar();
 
-    printf("PIB: ");
-    scanf("%f", &carta->Pib);
-    getchar();
+        printf("PIB: ");
+        scanf("%f", & Baralho[i].Pib);
+        getchar();
 
-    printf("Numero de pontos turisticos:");
-    scanf("%d", &carta->NumPontosTuristicos);
-    getchar();
+        printf("Numero de pontos turisticos:");
+        scanf("%d", & Baralho[i].NumPontosTuristicos);
+        getchar();
+    }
 }
 
 void ImprimirDados(struct Carta carta){

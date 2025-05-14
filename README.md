@@ -25,9 +25,3 @@ O projeto é dividido em 4 partes:
    - Integração dos três desafios anteriores em um único programa.
    - Utilização de loops e condicionais para gerar o tabuleiro completo com as áreas de efeito das habilidades.
 
-## Como Executar
-
-1. Clone o repositório para sua máquina local.
-   
-   ```bash
-   git clone https://github.com/seu-usuario/repositorio.git
